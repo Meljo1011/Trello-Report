@@ -35,30 +35,18 @@ class TrelloController extends Controller
 
         if ($response->getStatusCode() == 200) {
             $members = json_decode($response->getBody(), true);
-            // dd($members);
+
                 foreach ($members as $member) {
                     $userId = $member['id'];
                     $userName = $member['fullName'];
-
-                    // $url = "https://api.trello.com/1/members/{$userId}?key={$apiKey}&token={$token}";
-                    // $client = new Client();
-                    // $userData = json_decode($response->getBody(), true);
-                    // if (isset($userData['avatarUrl'])) {
-                    //     $profileIconUrl = $userData['avatarUrl'];
-                    //     echo "<img src=\"{$profileIconUrl}\" alt=\"Profile Icon\">";
-                    // } else {
-                    //     echo 'No avatar URL found for the user.';
-                    // }
-                    
-                    
-
+                    $avatarText = substr($userName, 0, 2);                 
 
                 $details[] = [
                     'id' => $member['id'],
                     'name' => $member['fullName'],
                     'taskcount' => 0,
                     'workspaceName' => $workspaceName,
-                    // 'profileIconUrl' => $userData['avatarUrl']
+                    'profileText' =>$avatarText
                  ];
                 $tasksUrl = "https://api.trello.com/1/members/{$userId}/cards?key={$apiKey}&token={$token}";
                 $tasksResponse = $client->get($tasksUrl);
@@ -76,9 +64,6 @@ class TrelloController extends Controller
         } else {
             echo 'Error retrieving workspace members: ' . $response->getBody();
         }
-    
-        // dd($details,$taskNames);
-
         return view('count', ['details' => $details, 'taskNames' => $taskNames]);
     }
     public function due()
@@ -96,6 +81,7 @@ class TrelloController extends Controller
         foreach ($members as $member) {
             $userId = $member['id'];
             $userName = $member['fullName'];
+            $avatarText = substr($userName, 0, 2);      
             $overdueCards = [];
 
             $tasksUrl = "https://api.trello.com/1/members/{$userId}/cards?key={$apiKey}&token={$token}";
@@ -111,7 +97,8 @@ class TrelloController extends Controller
                             $overdueCards[] = [
                                 'name' => $task['name'],
                                 'due' => $task['due'],
-                                'member' => $userName
+                                'member' => $userName,
+                                'profileText'=>$avatarText
                             ];
                         }
                     }
@@ -120,7 +107,7 @@ class TrelloController extends Controller
                 echo "Error retrieving tasks for {$userName}: " . $tasksResponse->getBody() . "\n";
             }
         }
-        // dd($overdueCards);
+
 
         return view('due', ['taskNames' => $overdueCards]);
     }
@@ -153,10 +140,10 @@ class TrelloController extends Controller
         if ($response->getStatusCode() == 200) {
             $boards = json_decode($response->getBody(), true);
             $workspaces = [];
-            // dd($boards);
+
             foreach ($boards as $board) {
                 $workspace = [
-                    'id' => $board['idOrganization'],
+                    // 'id' => $board['idOrganization'],
                     'name' => $board['name']
 
                 ];
@@ -164,7 +151,7 @@ class TrelloController extends Controller
         } else {
             echo 'Error retrieving user boards: ' . $response->getBody();
         }
-        // dd($workspace);
+
         return view('workspace', ['workspaces' => $workspace]);
     }
 }

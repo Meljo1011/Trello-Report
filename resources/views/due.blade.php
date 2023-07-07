@@ -8,8 +8,8 @@
     @foreach($taskNames as $taskName)
     <div class="user-list">
       <div class="user-row">
-        <div class="profile-photo">
-            <img src="{{url('images/icon.png')}}" alt="">
+        <div class="avatar">
+          {{$taskName['profileText']}}
         </div>
         <div class="person-info">
           <li>{{ $taskName['name']}}</li>  

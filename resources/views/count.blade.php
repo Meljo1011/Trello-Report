@@ -10,10 +10,8 @@
   @foreach($details as $detail)
   <div class="user-list">
     <div class="user-row">
-      <div class="profile-photo">
-        <img src="{{url('images/icon.png')}}" alt="">
-          {{-- <img src="{{$detail['profileIconUrl']}}" alt=""> --}}
-
+      <div class="avatar" >
+        {{$detail['profileText']}}
       </div>
       <div class="person-info">
         <ul>
@@ -22,7 +20,7 @@
       </div>
       <div class="msg-icon">
           <p>Task Count: {{ $detail['taskCount'] }}</p>
-          <span>Workspace:{{$details[count($details) - 1]['workspaceName']}}</span>
+          <span>Workspace:{{$detail['workspaceName']}}</span>
       </div>        
     
     </div>

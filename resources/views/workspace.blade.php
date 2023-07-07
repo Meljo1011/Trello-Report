@@ -9,9 +9,9 @@
         @foreach($workspaces as $workspace)
         <div class="user-list">
           <div class="user-row">
-            <div class="profile-photo">
-                <img src="{{url('images/icon.png')}}" alt="">
-            </div>
+            {{-- <div class="avatar">
+                
+            </div> --}}
             <div class="person-info">
               <h5>{{ $workspace}}</h5>
             </div>     
