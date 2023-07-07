@@ -4,7 +4,7 @@
   <div class="contact-container">
     <div class="header">
       <span> Contributers</span>
-      <span class="close" onclick="window.location.href = '/home';">&times;</span>
+      <span class="close" onclick="window.location.href = '/';">&times;</span>
     </div>
     @foreach($details as $detail)
     <div class="user-list">

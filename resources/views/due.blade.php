@@ -3,7 +3,7 @@
 <div class="contact-container">
     <div class="header">
         <span>List of Tasks</span>
-        <span class="close" onclick="window.location.href = '/home';">&times;</span>
+        <span class="close" onclick="window.location.href = '/';">&times;</span>
       </div>
     @foreach($taskNames as $taskName)
     <div class="user-list">
