@@ -15,7 +15,9 @@ use App\Http\Controllers\TrelloController;
 |
 */
 
-Route::get('/home',[TrelloController::class,'dash'])->name('dash');
+Route::get('/',function(){
+    return view ('dash');
+});
 Route::get('trello/report', [TrelloController::class, 'getReport'])->name('report');
 Route::get('trello/due',[TrelloController::class,'due'])->name('due');
 Route::get('trello/workspace',[TrelloController::class,'workspacelist'])->name('workspacelist');

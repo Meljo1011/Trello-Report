@@ -10,7 +10,7 @@
 <body>
     <div class="container">
         <div class="nav">
-            <a href="{{ route('dash') }}"><h3>Dashboard</h3></a>
+            <a href='/'><h3>Dashboard</h3></a>
             <p>Tasks</p>
             <p>Users</p>
             <div class="segment-box">
