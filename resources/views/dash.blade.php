@@ -24,7 +24,7 @@
             <img src="{{url('images/icon.png')}}" alt="">
         </div>
         <div class="upgrade">
-            <i class="fa-brands fa-studiovinari"></i>
+            {{-- <i class="fa-brands fa-studiovinari"></i> --}}
             <h4><span>TRELLO</span> Report</h4>
             <button>Download Report</button>
         </div>
@@ -43,15 +43,15 @@
         <div class="performance">
             <div class="percentages">
                 <div class="direct">
-                    <span></span> <!--circle-->
+                    <span></span> 
                     <h3>24% Open</h3>
                 </div>
                 <div class="Social">
-                    <span></span> <!--circle-->
+                    <span></span> 
                     <h3>31% Pending</h3>
                 </div>
                 <div class="Organic">
-                    <span></span> <!--circle-->
+                    <span></span> 
                     <h3>45% Done</h3>
                 </div>
             </div>

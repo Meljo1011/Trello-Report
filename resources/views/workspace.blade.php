@@ -4,7 +4,7 @@
     <div class="re">
         <div class="header">
             <span>Workspace details</span>
-            <span class="close" onclick="window.location.href = 'dash';">&times;</span>
+            <span class="close" onclick="window.location.href = '/home';">&times;</span>
           </div>
         @foreach($workspaces as $workspace)
         <div class="user-list">

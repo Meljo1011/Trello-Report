@@ -16,19 +16,26 @@ body{
     background-color: #050505;
     color: #222;
 }
-.container{
+.dash{
     display: grid;
     grid-template-columns:1.5fr 2fr 1fr ;
     grid-template-rows: repeat(3,1fr) ;
     gap: 1rem;
     height: 500px;
     text-align: right;
-    margin-top: 250px;
+}
+.container{
+    display: grid;
+    grid-template-columns:1.5fr 2fr 1fr ;
+    grid-template-rows: repeat(3,1fr) ;
+    gap: 1rem;
+    height: 100px;
+    text-align: right;
 }
 .container > div{
     background-color: #f3f3f3;
     border-radius: 10px;
-    padding: 1rem;
+    padding: 3rem;
 }
 .container .nav{
     grid-column: span 3;
@@ -207,6 +214,10 @@ body{
 .container .performance .percentages .Organic:before{
     background-color: #55990cbd;
     width: 150%;
+}
+.layout-container .contact-container{
+    gap: 1rem;
+    text-align: right;
 }
 .contact-container{
 

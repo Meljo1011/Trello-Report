@@ -9,7 +9,7 @@ class TrelloController extends Controller
 {
     public function dash()
     {
-        return view('welcome');
+        return view('dash');
     }
     public function getReport()
     {

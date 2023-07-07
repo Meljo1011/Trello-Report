@@ -25,6 +25,8 @@
         </div>
         
     </div>
-    @yield('content')
+    <div class="layout-contaier">
+        @yield('content')
+    </div>
 </body>
 </html>
