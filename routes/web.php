@@ -18,6 +18,9 @@ use App\Http\Controllers\TrelloController;
 Route::get('/',function(){
     return view ('dash');
 });
-Route::get('trello/report', [TrelloController::class, 'getReport'])->name('report');
-Route::get('trello/due',[TrelloController::class,'due'])->name('due');
-Route::get('trello/workspace',[TrelloController::class,'workspacelist'])->name('workspacelist');
+Route::prefix('trello')->group(function(){
+    Route::get('report', [TrelloController::class, 'getReport'])->name('report');
+    Route::get('due',[TrelloController::class,'due'])->name('due');
+    Route::get('workspace',[TrelloController::class,'workspacelist'])->name('workspacelist');
+});
+
