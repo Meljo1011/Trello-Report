@@ -11,8 +11,8 @@
     <div class="container">
         <div class="nav">
             <h3>Dashboard</h3>
-            <a href="{{ route('workspacelist') }}"><p>workspaces</p></a>
-            <p>Users</p>
+            <a href="{{ route('workspacelist') }}"><p>Workspaces</p></a>
+            <a href="{{ route('userlist')}}"><p>Users</p></a>
             <div class="segment-box">
                 <i class="fa-solid fa-circle-plus"></i>
                 <p>Add new Workspace</p>
