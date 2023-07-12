@@ -260,6 +260,57 @@ body{
     font-size: 48px;
     line-height: 100px;
 } 
+.slider-container {
+        position: relative;
+        display: flex;
+        align-items: center;
+    justify-content: space-between;
+    }
+
+    .slider-radio {
+        position: relative;
+        display: inline-block;
+        width: 40px;
+        height: 20px;
+    }
+
+    .slider-radio input[type="radio"] {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        cursor: pointer;
+        border-radius: 10px;
+        background-color: #ccc;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 16px;
+        width: 16px;
+        left: 2px;
+        bottom: 2px;
+        background-color: white;
+        border-radius: 50%;
+        transition: .4s;
+    }
+
+    input[type="radio"]:checked + .slider {
+        background-color: #2196F3;
+    }
+
+    input[type="radio"]:checked + .slider:before {
+        transform: translateX(20px);
+    }
 
 
 
