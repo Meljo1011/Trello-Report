@@ -2,7 +2,7 @@
 @section('content')
 <div class="contact-container">
     <div class="header">
-        <span>List of Tasks</span>
+        <span>List of Tasks on Due</span>
         <span class="close" onclick="window.location.href = '/';">&times;</span>
       </div>
     @foreach($taskNames as $taskName)

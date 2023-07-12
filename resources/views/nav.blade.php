@@ -29,4 +29,11 @@
         @yield('content')
     </div>
 </body>
+<script>
+    $(document).ready(function() {
+        $('.slider').on('click', function() {
+            $(this).prev('input[type="radio"]').prop('checked', true);
+        });
+    });
+</script>
 </html>
